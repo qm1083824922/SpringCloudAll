@@ -1,0 +1,15 @@
+server:
+  port: 7001
+spring:
+  application:
+    name: config-server-7001
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/caychen/spring-cloud-config
+          search-paths: repo
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

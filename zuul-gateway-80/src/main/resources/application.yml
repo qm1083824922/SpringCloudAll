@@ -1,0 +1,28 @@
+server:
+  port: 80
+spring:
+  application:
+    name: zuul-gateway
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+zuul:
+  routes:
+    service-A-url:
+      path: /service-A-url/**
+      url: http://localhost:8001/
+    service-B-url:
+      path: /service-B-url/**
+      url: http://localhost:8003/
+    service-A-id:
+      path: /service-A-id/**
+      serviceId: service-A
+    service-B-id:
+      path: /service-B-id/**
+      serviceId: service-B
+
+
+
